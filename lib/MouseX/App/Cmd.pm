@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 
-package MooseX::App::Cmd;
+package MouseX::App::Cmd;
 use File::Basename ();
-use Moose;
+use Mouse;
 
-extends qw(Moose::Object App::Cmd);
+extends qw(Mouse::Object App::Cmd);
 
 sub BUILDARGS {
   my $class = shift;
@@ -33,23 +33,23 @@ __END__
 
 =head1 NAME
 
-MooseX::App::Cmd - Mashes up L<MooseX::Getopt> and L<App::Cmd>.
+MouseX::App::Cmd - Mashes up L<MouseX::Getopt> and L<App::Cmd>.
 
 =head1 SYNOPSIS
 
 See L<App::Cmd/SYNOPSIS>.
 
     package YourApp::Cmd;
-	use Moose;
+	use Mouse;
 
-    extends qw(MooseX::App::Cmd);
+    extends qw(MouseX::App::Cmd);
 
 
 
     package YourApp::Cmd::Command::blort;
-    use Moose;
+    use Mouse;
 
-    extends qw(MooseX::App::Cmd::Command);
+    extends qw(MouseX::App::Cmd::Command);
 
     has blortex => (
         traits => [qw(Getopt)],
@@ -81,12 +81,12 @@ See L<App::Cmd/SYNOPSIS>.
 
 =head1 DESCRIPTION
 
-This module marries L<App::Cmd> with L<MooseX::Getopt>.
+This module marries L<App::Cmd> with L<MouseX::Getopt>.
 
 Use it like L<App::Cmd> advises (especially see L<App::Cmd::Tutorial>),
-swapping L<App::Cmd::Command> for L<MooseX::App::Cmd::Command>.
+swapping L<App::Cmd::Command> for L<MouseX::App::Cmd::Command>.
 
-Then you can write your moose commands as moose classes, with L<MooseX::Getopt>
+Then you can write your Mouse commands as Mouse classes, with L<MouseX::Getopt>
 defining the options for you instead of C<opt_spec> returning a
 L<Getopt::Long::Descriptive> spec.
 
@@ -99,6 +99,8 @@ With contributions from:
 =over 4
 
 =item Guillermo Roditi E<lt>groditi@cpan.orgE<gt>
+
+=item Mark Gardner E<lt>mjgardner@cpan.orgE<gt>
 
 =back
 

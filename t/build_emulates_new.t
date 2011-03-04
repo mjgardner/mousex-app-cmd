@@ -10,8 +10,8 @@ use Test::More tests => 1;
   use base 'App::Cmd';
 
   package Bar;
-  use Moose;
-  extends 'MooseX::App::Cmd';
+  use Mouse;
+  extends 'MouseX::App::Cmd';
 
 }
 

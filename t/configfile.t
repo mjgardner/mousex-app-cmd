@@ -7,11 +7,11 @@ use Test::More;
 BEGIN
 {
     eval {
-        require MooseX::ConfigFromFile;
+        require MouseX::ConfigFromFile;
         require YAML;
     };
     if ($@) {
-        plan( skip_all => "These tests require MooseX::ConfigFromFile and YAML" );
+        plan( skip_all => "These tests require MouseX::ConfigFromFile and YAML" );
     } else {
         plan( tests => 2 );
     }

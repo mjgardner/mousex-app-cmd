@@ -1,7 +1,7 @@
 package Test::MyCmd::Command::stock;
-use Moose;
+use Mouse;
 
-extends qw(MooseX::App::Cmd::Command);
+extends qw(MouseX::App::Cmd::Command);
 
 =head1 NAME
 

@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 
-package MooseX::App::Cmd::Command;
-use Moose;
+package MouseX::App::Cmd::Command;
+use Mouse;
 
-with qw/MooseX::Getopt/;
+with qw/MouseX::Getopt/;
 
-extends qw(Moose::Object App::Cmd::Command);
+extends qw(Mouse::Object App::Cmd::Command);
 
-with qw(MooseX::Getopt);
+with qw(MouseX::Getopt);
 
 use Getopt::Long::Descriptive ();
 
@@ -20,7 +20,7 @@ has usage => (
 
 has app => (
     metaclass => "NoGetopt",
-    isa => "MooseX::App::Cmd",
+    isa => "MouseX::App::Cmd",
     is  => "ro",
     required => 1,
 );
@@ -30,7 +30,7 @@ sub _process_args {
     local @ARGV = @$args;
 
     my $config_from_file;
-    if($class->meta->does_role('MooseX::ConfigFromFile')) {
+    if($class->meta->does_role('MouseX::ConfigFromFile')) {
         local @ARGV = @ARGV;
 
         my $configfile;
@@ -55,7 +55,7 @@ sub _process_args {
         $processed{params},
         $processed{argv},
         usage => $processed{usage},
-        # params from CLI are also fields in MooseX::Getopt
+        # params from CLI are also fields in MouseX::Getopt
         %{ $config_from_file ?
             { %$config_from_file, %{$processed{params}} } :
             $processed{params} },
@@ -75,16 +75,16 @@ __END__
 
 =head1 NAME
 
-MooseX::App::Cmd::Command - Base class for L<MooseX::Getopt> based L<App::Cmd::Command>s.
+MouseX::App::Cmd::Command - Base class for L<MouseX::Getopt> based L<App::Cmd::Command>s.
 
 =head1 SYNOPSIS
 
-    use Moose;
+    use Mouse;
 
-    extends qw(MooseX::App::Cmd::Command);
+    extends qw(MouseX::App::Cmd::Command);
 
     # no need to set opt_spec
-    # see MooseX::Getopt for documentation on how to specify options
+    # see MouseX::Getopt for documentation on how to specify options
     has option_field => (
         isa => "Str",
         is  => "rw",
@@ -100,7 +100,7 @@ MooseX::App::Cmd::Command - Base class for L<MooseX::Getopt> based L<App::Cmd::C
 =head1 DESCRIPTION
 
 This is a replacement base class for L<App::Cmd::Command> classes that includes
-L<MooseX::Getopt> and the glue to combine the two.
+L<MouseX::Getopt> and the glue to combine the two.
 
 =head1 METHODS
 
@@ -109,7 +109,7 @@ L<MooseX::Getopt> and the glue to combine the two.
 =item _process_args
 
 Replaces L<App::Cmd::Command>'s argument processing in in favour of
-L<MooseX::Getopt> based processing.
+L<MouseX::Getopt> based processing.
 
 =back
 
@@ -119,7 +119,7 @@ Full support for L<Getopt::Long::Descriptive>'s abilities is not yet written.
 
 This entails taking apart the attributes and getting at the descriptions.
 
-This might actually be added upstream to L<MooseX::Getopt>, so until we decide
+This might actually be added upstream to L<MouseX::Getopt>, so until we decide
 here's a functional but not very helpful (to the user) version anyway.
 
 =cut

@@ -1,6 +1,6 @@
 package Test::MyCmd;
-use Moose;
+use Mouse;
 
-extends qw(MooseX::App::Cmd);
+extends qw(MouseX::App::Cmd);
 
 1;
