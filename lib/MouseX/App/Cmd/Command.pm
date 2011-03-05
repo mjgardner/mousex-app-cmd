@@ -31,7 +31,7 @@ L<MouseX::Getopt|MouseX::Getopt> based processing.
 =cut
 
 sub _process_args {    ## no critic (ProhibitUnusedPrivateSubroutines)
-    my ( $class, $args, @params ) = @ARG;
+    my ( $class, $args ) = @ARG;
     local @ARGV = @{$args};
 
     my $config_from_file;
@@ -61,17 +61,13 @@ sub _process_args {    ## no critic (ProhibitUnusedPrivateSubroutines)
         options => [ $class->_attrs_to_options($config_from_file) ],
     );
 
-    return (
-        $processed{params},
-        $processed{argv},
-        usage => $processed{usage},
+    my @out
+        = ( $processed{params}, $processed{argv}, usage => $processed{usage},
+        );
 
-        # params from CLI are also fields in MouseX::Getopt
-        %{  $config_from_file
-            ? { %{$config_from_file}, %{ $processed{params} } }
-            : $processed{params}
-            },
-    );
+    # params from CLI are also fields in MouseX::Getopt
+    if ($config_from_file) { push @out, %{$config_from_file} }
+    return @out, %{ $processed{params} };
 }
 
 sub _usage_format {    ## no critic (ProhibitUnusedPrivateSubroutines)

@@ -8,19 +8,20 @@ use Mouse;
 extends qw(Mouse::Object App::Cmd);
 
 sub BUILDARGS {
-    my $class = shift;
+    shift;
     return {} if !@ARG;
     return { arg => $ARG[0] } if @ARG == 1;
     return {@ARG};
 }
 
 sub BUILD {
-    my ( $self, $args ) = @ARG;
-
+    my $self  = shift;
     my $class = blessed $self;
+
     $self->{arg0}      = File::Basename::basename($PROGRAM_NAME);
     $self->{command}   = $class->_command( {} );
     $self->{full_arg0} = $PROGRAM_NAME;
+
     return;
 }
 
