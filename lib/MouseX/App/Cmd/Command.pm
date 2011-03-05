@@ -103,7 +103,7 @@ L<MouseX::Getopt> and the glue to combine the two.
 
 =item _process_args
 
-Replaces L<App::Cmd::Command>'s argument processing in in favour of
+Replaces L<App::Cmd::Command>'s argument processing in in favor of
 L<MouseX::Getopt> based processing.
 
 =back

@@ -1,5 +1,9 @@
 =pod
 
+=for :stopwords Yuval Kogman Guillermo Roditi Mark Gardner Infinity Interactive
+
+=encoding utf8
+
 =head1 NAME
 
 MouseX::App::Cmd - Mashes up L<MouseX::Getopt> and L<App::Cmd>.
@@ -64,6 +68,15 @@ defining the options for you instead of C<opt_spec> returning a
 L<Getopt::Long::Descriptive> spec.
 
 =encoding utf8
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+http://github.com/mjg/MouseX-App-Cmd/issues
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
 
 =head1 AUTHORS
 
