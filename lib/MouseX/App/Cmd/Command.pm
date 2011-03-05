@@ -30,7 +30,7 @@ L<MouseX::Getopt|MouseX::Getopt> based processing.
 
 =cut
 
-sub _process_args {
+sub _process_args {    ## no critic (ProhibitUnusedPrivateSubroutines)
     my ( $class, $args, @params ) = @ARG;
     local @ARGV = @{$args};
 
@@ -48,7 +48,7 @@ sub _process_args {
         $opt_parser->getoptions( 'configfile=s' => \$configfile );
         if ( !defined $configfile ) {
             my $cfmeta = $class->meta->find_attribute_by_name('configfile');
-            $configfile = $cfmeta->default if $cfmeta->has_default;
+            if ( $cfmeta->has_default ) { $configfile = $cfmeta->default }
         }
 
         if ( defined $configfile ) {
@@ -74,14 +74,12 @@ sub _process_args {
     );
 }
 
-sub _usage_format {
+sub _usage_format {    ## no critic (ProhibitUnusedPrivateSubroutines)
     my $class = shift;
     return $class->usage_desc();
 }
 
 1;
-
-__END__
 
 =head1 SYNOPSIS
 

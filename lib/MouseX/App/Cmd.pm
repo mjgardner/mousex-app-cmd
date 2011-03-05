@@ -9,7 +9,7 @@ extends qw(Mouse::Object App::Cmd);
 
 sub BUILDARGS {
     my $class = shift;
-    return {} unless @ARG;
+    return {} if !@ARG;
     return { arg => $ARG[0] } if @ARG == 1;
     return {@ARG};
 }
@@ -25,8 +25,6 @@ sub BUILD {
 }
 
 1;
-
-__END__
 
 =head1 SYNOPSIS
 
