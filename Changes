@@ -1,3 +1,5 @@
+{{$NEXT}}
+
 0.06
     - various fixes for upstream version of App::Cmd (vovkasm & brunov)
 

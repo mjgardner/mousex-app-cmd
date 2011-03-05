@@ -1,6 +1,7 @@
-#!/usr/bin/perl
-
 package MouseX::App::Cmd::Command;
+
+# ABSTRACT: Base class for L<MouseX::Getopt> based L<App::Cmd::Command>s.
+
 use Mouse;
 
 with qw/MouseX::Getopt/;
@@ -71,12 +72,6 @@ __PACKAGE__;
 
 __END__
 
-=pod
-
-=head1 NAME
-
-MouseX::App::Cmd::Command - Base class for L<MouseX::Getopt> based L<App::Cmd::Command>s.
-
 =head1 SYNOPSIS
 
     use Mouse;
@@ -121,7 +116,3 @@ This entails taking apart the attributes and getting at the descriptions.
 
 This might actually be added upstream to L<MouseX::Getopt>, so until we decide
 here's a functional but not very helpful (to the user) version anyway.
-
-=cut
-
-

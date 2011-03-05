@@ -1,32 +1,12 @@
-package MouseX::App::Cmd;
+=pod
 
-# ABSTRACT: Mashes up L<MouseX::Getopt> and L<App::Cmd>.
+=head1 NAME
 
-use File::Basename ();
-use Mouse;
+MouseX::App::Cmd - Mashes up L<MouseX::Getopt> and L<App::Cmd>.
 
-extends qw(Mouse::Object App::Cmd);
+=head1 VERSION
 
-sub BUILDARGS {
-  my $class = shift;
-  return {} unless @_;
-  return { arg => $_[0] } if @_ == 1;;
-  return { @_ };
-}
-
-sub BUILD {
-  my ($self,$args) = @_;
-
-  my $class = blessed $self;
-  my $arg0 = $0;
-  $self->{arg0}      = File::Basename::basename($arg0);
-  $self->{command}   = $class->_command( {}  );
-  $self->{full_arg0} = $arg0;
-}
-
-__PACKAGE__;
-
-__END__
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -82,3 +62,31 @@ swapping L<App::Cmd::Command> for L<MouseX::App::Cmd::Command>.
 Then you can write your Mouse commands as Mouse classes, with L<MouseX::Getopt>
 defining the options for you instead of C<opt_spec> returning a
 L<Getopt::Long::Descriptive> spec.
+
+=encoding utf8
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Yuval Kogman <nothingmuch@woobling.org>
+
+=item *
+
+Guillermo Roditi <groditi@cpan.org>
+
+=item *
+
+Mark Gardner <mjgardner@cpan.org>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by Infinity Interactive.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
