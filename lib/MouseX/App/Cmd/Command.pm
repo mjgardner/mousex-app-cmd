@@ -2,15 +2,11 @@ package MouseX::App::Cmd::Command;
 
 # ABSTRACT: Base class for L<MouseX::Getopt|MouseX::Getopt> based L<App::Cmd::Command|App::Cmd::Command>s.
 
-use Mouse;
-
-with qw/MouseX::Getopt/;
-
-extends qw(Mouse::Object App::Cmd::Command);
-
-with qw(MouseX::Getopt);
-
+use English '-no_match_vars';
 use Getopt::Long::Descriptive ();
+use Mouse;
+with 'MouseX::Getopt';
+extends qw(Mouse::Object App::Cmd::Command);
 
 has usage => (
     metaclass => 'NoGetopt',
@@ -27,7 +23,7 @@ has app => (
 );
 
 sub _process_args {
-    my ( $class, $args, @params ) = @_;
+    my ( $class, $args, @params ) = @ARG;
     local @ARGV = @{$args};
 
     my $config_from_file;

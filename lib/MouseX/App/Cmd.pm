@@ -2,6 +2,7 @@ package MouseX::App::Cmd;
 
 # ABSTRACT: Mashes up L<MouseX::Getopt|MouseX::Getopt> and L<App::Cmd|App::Cmd>.
 
+use English '-no_match_vars';
 use File::Basename ();
 use Mouse;
 
@@ -9,16 +10,16 @@ extends qw(Mouse::Object App::Cmd);
 
 sub BUILDARGS {
     my $class = shift;
-    return {} unless @_;
-    return { arg => $_[0] } if @_ == 1;
-    return {@_};
+    return {} unless @ARG;
+    return { arg => $ARG[0] } if @ARG == 1;
+    return {@ARG};
 }
 
 sub BUILD {
     my ( $self, $args ) = @_;
 
     my $class = blessed $self;
-    my $arg0  = $0;
+    my $arg0  = $PROGRAM_NAME;
     $self->{arg0}      = File::Basename::basename($arg0);
     $self->{command}   = $class->_command( {} );
     $self->{full_arg0} = $arg0;
