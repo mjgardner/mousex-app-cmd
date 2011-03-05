@@ -5,7 +5,6 @@ package MouseX::App::Cmd;
 use English '-no_match_vars';
 use File::Basename ();
 use Mouse;
-
 extends qw(Mouse::Object App::Cmd);
 
 sub BUILDARGS {
@@ -16,7 +15,7 @@ sub BUILDARGS {
 }
 
 sub BUILD {
-    my ( $self, $args ) = @_;
+    my ( $self, $args ) = @ARG;
 
     my $class = blessed $self;
     my $arg0  = $PROGRAM_NAME;
@@ -76,11 +75,15 @@ See L<App::Cmd|App::Cmd/SYNOPSIS>.
 
 =head1 DESCRIPTION
 
-This module marries L<App::Cmd|App::Cmd> with L<MouseX::Getopt|MouseX::Getopt>.
+This module marries L<App::Cmd|App::Cmd> with
+L<MouseX::Getopt|MouseX::Getopt>.
 
-Use it like L<App::Cmd|App::Cmd> advises (especially see L<App::Cmd::Tutorial|App::Cmd::Tutorial>),
-swapping L<App::Cmd::Command|App::Cmd::Command> for L<MouseX::App::Cmd::Command|MouseX::App::Cmd::Command>.
+Use it like L<App::Cmd|App::Cmd> advises (especially see
+L<App::Cmd::Tutorial|App::Cmd::Tutorial>),
+swapping L<App::Cmd::Command|App::Cmd::Command> for
+L<MouseX::App::Cmd::Command|MouseX::App::Cmd::Command>.
 
-Then you can write your Mouse commands as Mouse classes, with L<MouseX::Getopt|MouseX::Getopt>
+Then you can write your Mouse commands as Mouse classes, with
+L<MouseX::Getopt|MouseX::Getopt>
 defining the options for you instead of C<opt_spec> returning a
 L<Getopt::Long::Descriptive|Getopt::Long::Descriptive> spec.

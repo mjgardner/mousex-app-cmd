@@ -1,6 +1,6 @@
 package MouseX::App::Cmd::Command;
 
-# ABSTRACT: Base class for L<MouseX::Getopt|MouseX::Getopt> based L<App::Cmd::Command|App::Cmd::Command>s.
+# ABSTRACT: Base class for commands.
 
 use English '-no_match_vars';
 use Getopt::Long::Descriptive ();
@@ -21,6 +21,14 @@ has app => (
     is        => 'ro',
     required  => 1,
 );
+
+=method _process_args
+
+Replaces L<App::Cmd::Command|App::Cmd::Command>'s argument processing in in
+favor of
+L<MouseX::Getopt|MouseX::Getopt> based processing.
+
+=cut
 
 sub _process_args {
     my ( $class, $args, @params ) = @ARG;
@@ -97,25 +105,17 @@ __END__
 
 =head1 DESCRIPTION
 
-This is a replacement base class for L<App::Cmd::Command|App::Cmd::Command> classes that includes
+This is a replacement base class for L<App::Cmd::Command|App::Cmd::Command>
+classes that includes
 L<MouseX::Getopt|MouseX::Getopt> and the glue to combine the two.
-
-=head1 METHODS
-
-=over 4
-
-=item _process_args
-
-Replaces L<App::Cmd::Command|App::Cmd::Command>'s argument processing in in favor of
-L<MouseX::Getopt|MouseX::Getopt> based processing.
-
-=back
 
 =head1 TODO
 
-Full support for L<Getopt::Long::Descriptive|Getopt::Long::Descriptive>'s abilities is not yet written.
+Full support for L<Getopt::Long::Descriptive|Getopt::Long::Descriptive>'s
+abilities is not yet written.
 
 This entails taking apart the attributes and getting at the descriptions.
 
-This might actually be added upstream to L<MouseX::Getopt|MouseX::Getopt>, so until we decide
+This might actually be added upstream to L<MouseX::Getopt|MouseX::Getopt>, so
+until we decide
 here's a functional but not very helpful (to the user) version anyway.
