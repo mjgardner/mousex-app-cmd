@@ -109,13 +109,12 @@ This is a replacement base class for L<App::Cmd::Command|App::Cmd::Command>
 classes that includes
 L<MouseX::Getopt|MouseX::Getopt> and the glue to combine the two.
 
-=head1 TODO
+=head1 SEE ALSO
 
-Full support for L<Getopt::Long::Descriptive|Getopt::Long::Descriptive>'s
-abilities is not yet written.
+=over
 
-This entails taking apart the attributes and getting at the descriptions.
+=item L<App::Cmd::Command|App::Cmd::Command>
 
-This might actually be added upstream to L<MouseX::Getopt|MouseX::Getopt>, so
-until we decide
-here's a functional but not very helpful (to the user) version anyway.
+=item L<MouseX::Getopt|MouseX::Getopt>
+
+=back

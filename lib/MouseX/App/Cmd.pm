@@ -31,13 +31,10 @@ __END__
 
 =head1 SYNOPSIS
 
-See L<App::Cmd|App::Cmd/SYNOPSIS>.
-
     package YourApp::Cmd;
 	use Mouse;
 
     extends qw(MouseX::App::Cmd);
-
 
 
     package YourApp::Cmd::Command::blort;
@@ -77,6 +74,7 @@ See L<App::Cmd|App::Cmd/SYNOPSIS>.
 
 This module marries L<App::Cmd|App::Cmd> with
 L<MouseX::Getopt|MouseX::Getopt>.
+It is a direct port of L<MooseX::App::Cmd|MooseX::App::Cmd> to L<Mouse|Mouse>.
 
 Use it like L<App::Cmd|App::Cmd> advises (especially see
 L<App::Cmd::Tutorial|App::Cmd::Tutorial>),
@@ -87,3 +85,15 @@ Then you can write your Mouse commands as Mouse classes, with
 L<MouseX::Getopt|MouseX::Getopt>
 defining the options for you instead of C<opt_spec> returning a
 L<Getopt::Long::Descriptive|Getopt::Long::Descriptive> spec.
+
+=head1 SEE ALSO
+
+=over
+
+=item L<App::Cmd|App::Cmd>
+
+=item L<MouseX::Getopt|MouseX::Getopt>
+
+=item L<MooseX::App::Cmd|MooseX::App::Cmd>
+
+=back
