@@ -1,5 +1,5 @@
 {{$NEXT}}
-
+    - convert to Dist::Zilla and its battery of tests
 0.06
     - various fixes for upstream version of App::Cmd (vovkasm & brunov)
 
