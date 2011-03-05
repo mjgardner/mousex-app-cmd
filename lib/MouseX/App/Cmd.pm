@@ -18,10 +18,9 @@ sub BUILD {
     my ( $self, $args ) = @ARG;
 
     my $class = blessed $self;
-    my $arg0  = $PROGRAM_NAME;
-    $self->{arg0}      = File::Basename::basename($arg0);
+    $self->{arg0}      = File::Basename::basename($PROGRAM_NAME);
     $self->{command}   = $class->_command( {} );
-    $self->{full_arg0} = $arg0;
+    $self->{full_arg0} = $PROGRAM_NAME;
     return;
 }
 
