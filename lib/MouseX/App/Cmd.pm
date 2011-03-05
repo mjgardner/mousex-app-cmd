@@ -1,6 +1,6 @@
 package MouseX::App::Cmd;
 
-# ABSTRACT: Mashes up L<MouseX::Getopt> and L<App::Cmd>.
+# ABSTRACT: Mashes up L<MouseX::Getopt|MouseX::Getopt> and L<App::Cmd|App::Cmd>.
 
 use File::Basename ();
 use Mouse;
@@ -31,7 +31,7 @@ __END__
 
 =head1 SYNOPSIS
 
-See L<App::Cmd/SYNOPSIS>.
+See L<App::Cmd|App::Cmd/SYNOPSIS>.
 
     package YourApp::Cmd;
 	use Mouse;
@@ -75,11 +75,11 @@ See L<App::Cmd/SYNOPSIS>.
 
 =head1 DESCRIPTION
 
-This module marries L<App::Cmd> with L<MouseX::Getopt>.
+This module marries L<App::Cmd|App::Cmd> with L<MouseX::Getopt|MouseX::Getopt>.
 
-Use it like L<App::Cmd> advises (especially see L<App::Cmd::Tutorial>),
-swapping L<App::Cmd::Command> for L<MouseX::App::Cmd::Command>.
+Use it like L<App::Cmd|App::Cmd> advises (especially see L<App::Cmd::Tutorial|App::Cmd::Tutorial>),
+swapping L<App::Cmd::Command|App::Cmd::Command> for L<MouseX::App::Cmd::Command|MouseX::App::Cmd::Command>.
 
-Then you can write your Mouse commands as Mouse classes, with L<MouseX::Getopt>
+Then you can write your Mouse commands as Mouse classes, with L<MouseX::Getopt|MouseX::Getopt>
 defining the options for you instead of C<opt_spec> returning a
-L<Getopt::Long::Descriptive> spec.
+L<Getopt::Long::Descriptive|Getopt::Long::Descriptive> spec.

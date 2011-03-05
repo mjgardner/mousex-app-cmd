@@ -1,6 +1,6 @@
 package MouseX::App::Cmd::Command;
 
-# ABSTRACT: Base class for L<MouseX::Getopt> based L<App::Cmd::Command>s.
+# ABSTRACT: Base class for L<MouseX::Getopt|MouseX::Getopt> based L<App::Cmd::Command|App::Cmd::Command>s.
 
 use Mouse;
 
@@ -94,8 +94,8 @@ __END__
 
 =head1 DESCRIPTION
 
-This is a replacement base class for L<App::Cmd::Command> classes that includes
-L<MouseX::Getopt> and the glue to combine the two.
+This is a replacement base class for L<App::Cmd::Command|App::Cmd::Command> classes that includes
+L<MouseX::Getopt|MouseX::Getopt> and the glue to combine the two.
 
 =head1 METHODS
 
@@ -103,16 +103,16 @@ L<MouseX::Getopt> and the glue to combine the two.
 
 =item _process_args
 
-Replaces L<App::Cmd::Command>'s argument processing in in favor of
-L<MouseX::Getopt> based processing.
+Replaces L<App::Cmd::Command|App::Cmd::Command>'s argument processing in in favor of
+L<MouseX::Getopt|MouseX::Getopt> based processing.
 
 =back
 
 =head1 TODO
 
-Full support for L<Getopt::Long::Descriptive>'s abilities is not yet written.
+Full support for L<Getopt::Long::Descriptive|Getopt::Long::Descriptive>'s abilities is not yet written.
 
 This entails taking apart the attributes and getting at the descriptions.
 
-This might actually be added upstream to L<MouseX::Getopt>, so until we decide
+This might actually be added upstream to L<MouseX::Getopt|MouseX::Getopt>, so until we decide
 here's a functional but not very helpful (to the user) version anyway.
