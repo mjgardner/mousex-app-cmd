@@ -13,22 +13,22 @@ with qw(MouseX::Getopt);
 use Getopt::Long::Descriptive ();
 
 has usage => (
-    metaclass => "NoGetopt",
-    isa => "Object",
-    is  => "ro",
+    metaclass => 'NoGetopt',
+    isa => 'Object',
+    is  => 'ro',
     required => 1,
 );
 
 has app => (
-    metaclass => "NoGetopt",
-    isa => "MouseX::App::Cmd",
-    is  => "ro",
+    metaclass => 'NoGetopt',
+    isa => 'MouseX::App::Cmd',
+    is  => 'ro',
     required => 1,
 );
 
 sub _process_args {
     my ( $class, $args, @params ) = @_;
-    local @ARGV = @$args;
+    local @ARGV = @{$args};
 
     my $config_from_file;
     if($class->meta->does_role('MouseX::ConfigFromFile')) {
@@ -37,7 +37,7 @@ sub _process_args {
         my $configfile;
         my $opt_parser = Getopt::Long::Parser->new( config => [ qw( pass_through
  ) ] );
-        $opt_parser->getoptions( "configfile=s" => \$configfile );        if(!defined $configfile) {
+        $opt_parser->getoptions( 'configfile=s' => \$configfile );        if(!defined $configfile) {
             my $cfmeta = $class->meta->find_attribute_by_name('configfile');
             $configfile = $cfmeta->default if $cfmeta->has_default;
         }
@@ -58,17 +58,17 @@ sub _process_args {
         usage => $processed{usage},
         # params from CLI are also fields in MouseX::Getopt
         %{ $config_from_file ?
-            { %$config_from_file, %{$processed{params}} } :
+            { %{$config_from_file}, %{$processed{params}} } :
             $processed{params} },
     );
 }
 
 sub _usage_format {
     my $class = shift;
-    $class->usage_desc();
+    return $class->usage_desc();
 }
 
-__PACKAGE__;
+1;
 
 __END__
 

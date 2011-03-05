@@ -11,7 +11,7 @@ BEGIN
         require YAML;
     };
     if ($@) {
-        plan( skip_all => "These tests require MouseX::ConfigFromFile and YAML" );
+        plan( skip_all => 'These tests require MouseX::ConfigFromFile and YAML' );
     } else {
         plan( tests => 2 );
     }
@@ -29,7 +29,7 @@ my $cmd = Test::ConfigFromFile->new;
   like(
     $@,
     qr/Required option missing/,
-    "command died with the correct string",
+    'command died with the correct string',
   );
 }
 
@@ -40,6 +40,6 @@ my $cmd = Test::ConfigFromFile->new;
   like(
     $@,
     qr/cows go moo1 moo2 moo3/,
-    "command died with the correct string",
+    'command died with the correct string',
   );
 }

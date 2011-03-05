@@ -16,7 +16,7 @@ isa_ok($cmd, 'Test::MyCmd');
 is_deeply(
   [ sort $cmd->command_names ],
   [ sort qw(help --help -h -? commands frob frobulate justusage stock bark) ],
-  "got correct list of registered command names",
+  'got correct list of registered command names',
 );
 
 use Data::Dumper;
@@ -31,7 +31,7 @@ is_deeply(
     Test::MyCmd::Command::justusage
     Test::MyCmd::Command::stock
   ) ],
-  "got correct list of registered command plugins",
+  'got correct list of registered command plugins',
 );
 
 {
@@ -41,7 +41,7 @@ is_deeply(
   is(
     $@,
     "the widget name is wname - your fat face\n",
-    "command died with the correct string",
+    'command died with the correct string',
   );
 }
 
@@ -54,7 +54,7 @@ is_deeply(
   like(
     $error,
     qr/^basic.t justusage/,
-    "default usage_desc is okay",
+    'default usage_desc is okay',
   );
 }
 
@@ -62,7 +62,7 @@ is_deeply(
   local @ARGV = qw(stock);
   eval { $cmd->run };
   
-  like($@, qr/mandatory method/, "un-subclassed &run leads to death");
+  like($@, qr/mandatory method/, 'un-subclassed &run leads to death');
 }
 
 {
@@ -72,14 +72,14 @@ is_deeply(
   like(
     $@,
     qr/Required option missing: wow/, 
-    "required option fileld is missing",
+    'required option fileld is missing',
   );
 }
 
 SKIP: {
   my $have_TO = eval { require Test::Output; 1; };
   print STDERR $@;
-  skip "these tests require Test::Output", 5 unless $have_TO;
+  skip 'these tests require Test::Output', 5 unless $have_TO;
 
   local @ARGV = qw(commands);
 
