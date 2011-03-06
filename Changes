@@ -1,4 +1,6 @@
 {{$NEXT}}
+
+0.08      2011-03-05 20:42:32 America/New_York
     support perl >= 5.006
 0.07      2011-03-04 22:36:10 America/New_York
     convert to Dist::Zilla and its battery of tests
