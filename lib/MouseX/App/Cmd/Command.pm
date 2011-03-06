@@ -2,9 +2,9 @@ package MouseX::App::Cmd::Command;
 
 # ABSTRACT: Base class for commands.
 
+use Mouse;
 use English '-no_match_vars';
 use Getopt::Long::Descriptive ();
-use Mouse;
 with 'MouseX::Getopt';
 extends qw(Mouse::Object App::Cmd::Command);
 
@@ -39,12 +39,12 @@ sub _process_args {    ## no critic (ProhibitUnusedPrivateSubroutines)
         local @ARGV = @ARGV;
 
         my $configfile;
-        my $opt_parser = Getopt::Long::Parser->new(
-            config => [
-                qw( pass_through
-                    )
-            ]
-        );
+        my $opt_parser;
+        {
+            ## no critic (Modules::RequireExplicitInclusion)
+            $opt_parser
+                = Getopt::Long::Parser->new( config => [qw( pass_through)] );
+        }
         $opt_parser->getoptions( 'configfile=s' => \$configfile );
         if ( !defined $configfile ) {
             my $cfmeta = $class->meta->find_attribute_by_name('configfile');

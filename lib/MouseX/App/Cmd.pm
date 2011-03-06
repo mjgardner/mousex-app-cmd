@@ -2,9 +2,9 @@ package MouseX::App::Cmd;
 
 # ABSTRACT: Mashes up L<MouseX::Getopt|MouseX::Getopt> and L<App::Cmd|App::Cmd>.
 
+use Mouse;
 use English '-no_match_vars';
 use File::Basename ();
-use Mouse;
 extends qw(Mouse::Object App::Cmd);
 
 sub BUILDARGS {
