@@ -1,6 +1,8 @@
 Revision history for MouseX-App-Cmd
 
 {{$NEXT}}
+
+0.10      2012-03-13 15:22:53 America/New_York
     official release, no code changes
 0.09      2012-03-13 13:25:07 America/New_York
     TRIAL RELEASE: fix tests for changes in output when receiving bad parameters
