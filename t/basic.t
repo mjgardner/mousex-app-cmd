@@ -69,8 +69,8 @@ is_deeply(
 
     like(
         $@,
-        qr/Required option missing: wow/,
-        'required option fileld is missing',
+        qr/Mandatory parameter 'wow' missing/,
+        'required option field is missing',
     );
 }
 
