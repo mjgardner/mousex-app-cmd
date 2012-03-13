@@ -2,7 +2,7 @@ NAME
     MouseX::App::Cmd - Mashes up MouseX::Getopt and App::Cmd.
 
 VERSION
-    version 0.10
+    version 0.11
 
 SYNOPSIS
         package YourApp::Cmd;

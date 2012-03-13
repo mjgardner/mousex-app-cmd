@@ -3,7 +3,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.10';    # VERSION
+our $VERSION = '0.11';    # VERSION
 use Mouse;
 use English '-no_match_vars';
 use File::Basename ();
@@ -45,7 +45,7 @@ MouseX::App::Cmd - Mashes up L<MouseX::Getopt|MouseX::Getopt> and L<App::Cmd|App
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 

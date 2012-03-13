@@ -27,7 +27,7 @@
             "App::Cmd::Command" : "0",
             "English" : "0",
             "File::Basename" : "0",
-            "Getopt::Long::Descriptive" : "0",
+            "Getopt::Long::Descriptive" : "0.091",
             "Mouse" : "0.86",
             "Mouse::Object" : "0",
             "MouseX::Getopt" : "0.18",
@@ -65,7 +65,7 @@
          "web" : "https://github.com/mjgardner/mousex-app-cmd"
       }
    },
-   "version" : "0.10",
+   "version" : "0.11",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
