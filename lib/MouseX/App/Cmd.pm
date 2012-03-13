@@ -4,8 +4,6 @@ use strict;
 use warnings;
 
 # VERSION
-# ABSTRACT: Mashes up L<MouseX::Getopt|MouseX::Getopt> and L<App::Cmd|App::Cmd>.
-
 use Mouse;
 use English '-no_match_vars';
 use File::Basename ();
@@ -30,6 +28,8 @@ sub BUILD {
 }
 
 1;
+
+# ABSTRACT: Mashes up L<MouseX::Getopt|MouseX::Getopt> and L<App::Cmd|App::Cmd>.
 
 =head1 SYNOPSIS
 

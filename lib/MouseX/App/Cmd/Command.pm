@@ -4,8 +4,6 @@ use strict;
 use warnings;
 
 # VERSION
-# ABSTRACT: Base class for commands.
-
 use Mouse;
 use English '-no_match_vars';
 use Getopt::Long::Descriptive ();
@@ -25,14 +23,6 @@ has app => (
     is        => 'ro',
     required  => 1,
 );
-
-=method _process_args
-
-Replaces L<App::Cmd::Command|App::Cmd::Command>'s argument processing in in
-favor of
-L<MouseX::Getopt|MouseX::Getopt> based processing.
-
-=cut
 
 sub _process_args {    ## no critic (ProhibitUnusedPrivateSubroutines)
     my ( $class, $args ) = @ARG;
@@ -81,6 +71,8 @@ sub _usage_format {    ## no critic (ProhibitUnusedPrivateSubroutines)
 
 1;
 
+# ABSTRACT: Base class for commands.
+
 =head1 SYNOPSIS
 
     use Mouse;
@@ -106,6 +98,12 @@ sub _usage_format {    ## no critic (ProhibitUnusedPrivateSubroutines)
 This is a replacement base class for L<App::Cmd::Command|App::Cmd::Command>
 classes that includes
 L<MouseX::Getopt|MouseX::Getopt> and the glue to combine the two.
+
+=method _process_args
+
+Replaces L<App::Cmd::Command|App::Cmd::Command>'s argument processing in in
+favor of
+L<MouseX::Getopt|MouseX::Getopt> based processing.
 
 =head1 SEE ALSO
 
