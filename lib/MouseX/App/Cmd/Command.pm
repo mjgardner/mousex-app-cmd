@@ -1,5 +1,9 @@
 package MouseX::App::Cmd::Command;
+use 5.006;
+use strict;
+use warnings;
 
+# VERSION
 # ABSTRACT: Base class for commands.
 
 use Mouse;

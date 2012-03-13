@@ -1,5 +1,9 @@
 package MouseX::App::Cmd;
+use 5.006;
+use strict;
+use warnings;
 
+# VERSION
 # ABSTRACT: Mashes up L<MouseX::Getopt|MouseX::Getopt> and L<App::Cmd|App::Cmd>.
 
 use Mouse;
