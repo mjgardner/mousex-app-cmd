@@ -3,7 +3,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.09';    # VERSION
+our $VERSION = '0.10';    # VERSION
 use Mouse;
 use English '-no_match_vars';
 use Getopt::Long::Descriptive ();
@@ -87,7 +87,7 @@ MouseX::App::Cmd::Command - Base class for commands.
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 

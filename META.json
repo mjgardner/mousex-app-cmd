@@ -53,19 +53,19 @@
          }
       }
    },
-   "release_status" : "testing",
+   "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
          "web" : "https://github.com/mjgardner/mousex-app-cmd/issues"
       },
-      "homepage" : "http://search.cpan.org/dist/MouseX-App-Cmd/",
+      "homepage" : "http://metacpan.org/release/MouseX-App-Cmd",
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/mjgardner/mousex-app-cmd.git",
          "web" : "https://github.com/mjgardner/mousex-app-cmd"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -368,7 +368,7 @@
       "zilla" : {
          "class" : "Dist::Zilla::Dist::Builder",
          "config" : {
-            "is_trial" : "1"
+            "is_trial" : "0"
          },
          "version" : "4.300009"
       }
